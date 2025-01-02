@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> StarLight Games</title>
+    <link rel="stylesheet" href="aat.css">
+    <link rel="icon" href="favicon.ico" type="image/png">
+    <script src="aat.js"></script>
+    <style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color: blueviolet;
+        }
+        .font
+        {
+            padding: 5%;
+            padding-top: 1%;
+        }
+        .large
+        {
+            color: blueviolet;
+        }
+        
+    </style>
+    <script>
+        const joinedCommunities = {};
+
+        function joinCommunity() {
+            const communitySelect = document.getElementById('communitySelect');
+            const selectedCommunity = communitySelect.value;
+
+            if (selectedCommunity === "--SELECT--") {
+                alert("Please choose a community.");
+            } else if (!joinedCommunities[selectedCommunity]) {
+                joinedCommunities[selectedCommunity] = true;
+                alert(`Congratulations, you have joined the ${selectedCommunity} community!`);
+            } else {
+                alert(`You are already joined in the ${selectedCommunity} community.`);
+            }
+        }
+        
+    </script>
+    
+</head>
+<body style="margin: 0;">
+    <nav class="nav">
+        <a href="index.html">
+            <img id="img1" src="logo (3).png" width="30%" height="30%" alt="error">
+        </a>
+        <p id="t1">
+            <a href="index.html"> <button type="button"> HOME</button></a>&nbsp;&nbsp;
+            <a href="community.html"> <button type="button">COMMUNITY</button></a>&nbsp;&nbsp;
+            <a href="contactus.html"> <button type="button">CONTACT US</button></a>&nbsp;&nbsp;
+            <a href="checkout.html"><img src="../Assets/cart.jpg" alt="crt" height="2.5%" width="2.5%"><button type="button" class="cart">0</button></a>&nbsp;&nbsp;
+        </p>
+    </nav> <br><br><br>
+    <div class="font" style="color: white;">
+        <p class="large">
+            WELCOME TO STARLIGHT COMMUNITY
+        </p>
+        <P style="font-size:x-large; ">
+            At StarLight, we're delighted to welcome you to our dynamic gaming community.<br>
+            Here, gaming enthusiasts like yourself come together to share their passion, gain insights, 
+            and connect with fellow gamers. <br>Whether you're a seasoned player or just starting your gaming
+            journey, our community is your space to immerse yourself in all things gaming.
+        </P>
+        <p class="large">
+            DISCOVER WHAT OUR COMMUNITY OFFERS
+        </p>
+        <P style="font-size:x-large;">
+            StarLight's community is designed to provide you with an immersive gaming experience. <BR>
+            Here's what you can explore:
+            <br>
+            <ul style="font-size:x-large;">
+                <li>Game Discussions: <br>Dive into our game-specific forums and discussion boards. 
+                    Share strategies, ask for tips, and engage in lively 
+                    conversations with gamers who share your interests.</li><br>
+                <li>Gaming Events: <br>Stay updated on upcoming gaming events, tournaments, 
+                    and live streams. Participate, compete, and cheer for your favorite players.</li><br>
+                <li>Gamer Profiles:<br> Create your gaming identity with a unique username and avatar. 
+                    Showcase your gaming achievements and connect with like-minded gamers.</li><br>
+                <li>Community Blog:<br> Explore our blog filled with gaming articles, reviews, and insights. 
+                    Join discussions, share your opinions, and stay informed about the latest gaming trends.</li><br>
+                <li>Q&A Hub: <br>Have gaming questions? Our Q&A section is the place to find answers and help 
+                    others with your expertise.</li><br>
+                <li>Game Resources:<br> Access downloadable resources, guides, and mods that enhance your gaming experience.</li><br>
+                <li>Featured Gamers:<br> Meet our outstanding members who have made significant contributions to the gaming community. 
+                    Learn from their gaming experiences and achievements.</li>
+            </ul>
+        </P>
+        <p class="large"> JOIN THE STARLIGHT GAMING TODAY</p>
+        <p style="font-size:x-large;">
+            We invite you to become a part of the StarLight Gaming Community. <br>
+            Whether you're here to discuss your favorite games, seek gaming advice, or share your gaming journey, 
+            you're among friends who share your passion. Together, we'll make gaming even more exciting and enjoyable.
+            <br>
+            If you have any questions, suggestions, or need assistance, don't hesitate to <a href="contactus.html"> Contact Us</a> 
+            <br>Join us today, and let's level up our gaming experiences together!
+        </p>
+        <div class="join">
+            <p style="font-size: x-large;">Select a community</p>
+            <select class="com" id="communitySelect">
+                <option value="SPIDER-MAN 2">SPIDER-MAN 2</option>
+                <option value="GTA-V">GTA-V</option>
+                <option value="MINECRAFT">MINECRAFT</option>
+                <option value="PUBG">PUBG</option>
+                <option value="AMOUNG US">AMOUNG US</option>
+                <option value="OUTLAST">OUTLAST</option>
+                <option value="ONLY UP!">ONLY UP!</option>
+                <option value="MICROSOFT FLIGHT SIMULATOR">MICROSOFT FLIGHT SIMULATOR</option>
+                <option value="--SELECT--" selected>--SELECT--</option>
+            </select>
+            <button id="joinButton" onclick="joinCommunity()" style="font-size:large;">JOIN</button>
+        </div>
+    </div>
+ 
+   
+      
+    <footer>
+        <div class="bottom_para">
+            <br><br><br>
+            <p style="color:goldenrod;"><b>GAMES AVAILABLE :-</b></p>
+            <ul style="color: white;">
+                <li>SPIDERMAN-2</li>
+                <li>GTA-V</li>
+                <li>MINECRAFT</li>
+                <li>PUBG</li>
+                <li>AMONG US</li>
+                <li>OUTLAST</li>
+                <li>ONLY UP!</li>
+                <li>MICROSOFT FLIGHT SIMULATOR</li>
+            </ul>
+        </div>
+        <div class="bottom_para">
+            <br><br>
+            <p style="color:goldenrod;"><b>LINKS:-</b></p>
+            <a href="contactus.html">CONTACT US<br><br></a>
+            <a href="community.html">COMMUNITY<br><br></a>
+        </div>
+    </footer>
+</body>
+</html>        

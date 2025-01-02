@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> StarLight Games</title>
+    <link rel="stylesheet" href="aat.css">
+    <link rel="icon" href="favicon.ico" type="image/png">
+    <script src="aat.js"></script>
+    <style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+       .align
+       {
+            padding: 5%;
+            padding-top: 1%;
+            color: white;  
+       }
+       .lar
+       {
+        color: white;
+        font-size: large;
+       }
+       .form {
+        background-color: #f7f7f7;
+        padding: 20px;
+        margin: 5px;
+        border-radius: 10px;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+    .forma {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    label {
+        display: inline-block;
+        width: 100%; /* Adjust width as needed */
+        margin-right: 10px; /* Adjust margin for the gap */
+    }
+    input[type="text"],
+    input[type="email"] ,textarea{
+        display: inline-block;
+        width: calc(100% - 120px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input {
+        border: 1px solid #007bff;
+        margin: 5px;
+    }
+    #submit
+    {
+        /* border-bottom: black; */
+        background-color: #6fb5ff;
+        font-size: 16px;
+        padding: 8px ;
+        border-radius: 8px;
+        /* border-width:5px; */
+        /* border: solid black; */
+    }
+    #submit:hover {
+        background-color: #0e82ff;
+        transition: all ease 0.8s;
+    }
+    </style>
+    <script>
+        function submitForm(event) {
+            // Prevent the form from submitting normally
+            event.preventDefault();
+
+            // Get references to the input and textarea fields
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const numInput = document.getElementById('num');
+            const messageTextarea = document.getElementById('message');
+
+            // Check if any of the input fields are empty
+            if (!nameInput.value || !emailInput.value || !numInput.value || !messageTextarea.value) {
+                alert('Please fill in all required fields.');
+            } else {
+                // Here, you can add your form submission logic
+                // For demonstration purposes, we'll simulate a successful submission
+                // You should replace this with your actual form submission code
+
+                // Simulate a successful form submission
+                const isFormSubmitted = true;
+
+                if (isFormSubmitted) {
+                    // Display a Windows alert if the form is successfully submitted
+                    alert("Form submitted successfully!");
+
+                    // Reset the form to its default values
+                    document.getElementById('contactForm').reset();
+                }
+            }
+        }
+
+        // Automatically move to the next input field when Enter is pressed
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                const inputs = document.querySelectorAll('input, textarea');
+                const currentInput = document.activeElement;
+                const currentIndex = Array.from(inputs).indexOf(currentInput);
+                const nextIndex = (currentIndex + 1) % inputs.length;
+                inputs[nextIndex].focus();
+
+                // If the current input is the textarea, submit the form
+                if (currentInput.tagName === 'TEXTAREA') {
+                    document.getElementById('contactForm').submit();
+                }
+
+                event.preventDefault(); // Prevent form submission on Enter
+            }
+        }
+        );  
+    </script>
+    
+</head>
+<body style="margin: 0;">
+    <nav class="nav">
+        <a href="main_page.html">
+            <img id="img1" src="../Assets/logo (3).png" width="30%" height="30%" alt="error">
+        </a>
+        <p id="t1">
+            <a href="index.html"> <button type="button"> HOME</button></a>&nbsp;&nbsp;
+            <a href="community.html"> <button type="button">COMMUNITY</button></a>&nbsp;&nbsp;
+            <a href="contactus.html"> <button type="button">CONTACT US</button></a>&nbsp;&nbsp;
+            <a href="checkout.html"><img src="../Assets/cart.jpg" alt="crt" height="2.5%" width="2.5%"><button type="button" class="cart">0</button></a>&nbsp;&nbsp;
+        </p>
+    </nav> <br><br><br>
+    <div class="align">
+        <p class="large" style="color: blueviolet;">Contact Us:</p>
+        <p class="lar">We welcome your inquiries and feedback. 
+            Our team at StarLight Games is here to assist you with any
+            questions or concerns you may have. If you prefer to send us
+             a message or have a specific request, please feel free to use 
+             the contact form below. We'll get back to you as soon as possible.</p>
+        <p class="large" style="color: blueviolet;">Contact Form</p>
+        <p class="lar"> Our contact form makes it easy to get in touch with us. 
+            Simply fill out the required fields with your name, email address, and your message or inquiry. <BR>
+            Once you've submitted your details, we'll review your message and respond promptly.
+            We value your input and are committed to providing exceptional customer support. <BR>
+            Your satisfaction is important to us, and we look forward to assisting you in any way we can.<BR><BR>
+
+            Thank you for choosing StarLight Games as your source for gaming excitement!
+        </p>  
+
+        <div class="forma">
+            <div class="form" id="con">
+                <form method="post" id="contactForm">
+                    <input type="text" id="name" placeholder="Name"><br>
+                    <input type="email" id="email" placeholder="Email" required><br>
+                    <input type="text" id="num" minlength="10" maxlength="10" placeholder="Contact"><br><br>
+                    <textarea id="message" rows="10" cols="50" placeholder="Enter your queries and issues"></textarea><br><br>
+                    <button type="submit" id="submit" onclick="submitForm(event)">Submit</button>
+                </form>
+            </div>
+        </div> 
+      
+    </div>
+
+
+    <footer>
+        <div class="bottom_para">
+            <br><br><br>
+            <p style="color:goldenrod;"><b>GAMES AVAILABLE :-</b></p>
+            <ul style="color: white;">
+                <li>SPIDERMAN-2</li>
+                <li>GTA-V</li>
+                <li>MINECRAFT</li>
+                <li>PUBG</li>
+                <li>AMONG US</li>
+                <li>OUTLAST</li>
+                <li>ONLY UP!</li>
+                <li>MICROSOFT FLIGHT SIMULATOR</li>
+            </ul>
+        </div>
+        <div class="bottom_para">
+            <br><br>
+            <p style="color:goldenrod;"><b>LINKS:-</b></p>
+            <a href="contactus.html">CONTACT US<br><br></a>
+            <a href="community.html">COMMUNITY<br><br></a>
+        </div>
+    </footer>
+</body>
+</html>        
