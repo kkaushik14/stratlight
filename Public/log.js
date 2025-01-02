@@ -21,12 +21,51 @@ function toggleForm(formType) {
     }
 }
 
-document.getElementById('loginForm').addEventListener('submit', function(e) {
+document.getElementById('loginForm').addEventListener('submit', async function (e) {
     e.preventDefault();
-    alert('Login functionality would be implemented here!');
+
+    const email = this.querySelector('input[type="email"]').value;
+    const password = this.querySelector('input[type="password"]').value;
+
+    try {
+        const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            alert('Login successful!');
+            console.log(data);
+        } else {
+            alert(`Error: ${data.message}`);
+        }
+    } catch (err) {
+        alert('An error occurred. Please try again.');
+        console.error(err);
+    }
 });
 
-document.getElementById('registerForm').addEventListener('submit', function(e) {
+document.getElementById('registerForm').addEventListener('submit', async function (e) {
     e.preventDefault();
-    alert('Registration functionality would be implemented here!');
+    
+    const formData = {
+        username: document.querySelector('#registerForm input[placeholder="Choose a username"]').value,
+        email: document.querySelector('#registerForm input[placeholder="Enter your email"]').value,
+        password: document.querySelector('#registerForm input[placeholder="Create a password"]').value,
+    };
+
+    try {
+        const response = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
+        const data = await response.json();
+        alert(data.message);
+    } catch (err) {
+        alert("Error during registration");
+        console.error(err);
+    }
 });
